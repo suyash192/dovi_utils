@@ -10,6 +10,7 @@ AUDIO_CODEC="$5"   # e.g., "ac3" or "libopus"
 /usr/bin/cat "$PIPE_PATH" | \
 /usr/bin/hevc_to_mkv | \
 /usr/lib/jellyfin-ffmpeg/ffmpeg \
+    -strict -2 \
     -hide_banner \
     -loglevel error \
     -ss $SEEK_ARG \
