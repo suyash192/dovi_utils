@@ -12,7 +12,7 @@ AUDIO_CODEC="$5"   # e.g., "ac3" or "libopus"
 /usr/lib/jellyfin-ffmpeg/ffmpeg \
     -hide_banner \
     -loglevel error \
-    $SEEK_ARG \
+    -ss $SEEK_ARG \
     -f matroska -i "$INPUT_FILE" \
     -f matroska -i pipe:0 \
     -map 1:v:0 \
