@@ -13,8 +13,8 @@ AUDIO_CODEC="$5"   # e.g., "ac3" or "libopus"
     -hide_banner \
     -loglevel error \
     -ss $SEEK_ARG \
-    -framerate 23.976 -f matroska -i "$INPUT_FILE" \
-    -framerate 23.976 -f matroska -i pipe:0 \
+    -probesize 42M -framerate 23.976 -f matroska -i "$INPUT_FILE" \
+    -probesize 42M -framerate 23.976 -f matroska -i pipe:0 \
     -map 1:v:0 \
     -map 0:a:"$AUDIO_INDEX" \
     -map 0:s:"$SUB_INDEX" \
